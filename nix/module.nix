@@ -32,7 +32,7 @@ in
     user = lib.mkOption {
       type = lib.types.str;
       default = "yt-dlp-web-ui";
-      description = lib.mdDoc ''
+      description = ''
         User under which yt-dlp-web-ui runs.
       '';
     };
@@ -40,7 +40,7 @@ in
     group = lib.mkOption {
       type = lib.types.str;
       default = "yt-dlp-web-ui";
-      description = lib.mdDoc ''
+      description = ''
         Group under which yt-dlp-web-ui runs.
       '';
     };
@@ -48,7 +48,7 @@ in
     openFirewall = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = lib.mdDoc ''
+      description = ''
         Whether to open the TCP port in the firewall.
       '';
     };
@@ -56,7 +56,7 @@ in
     host = lib.mkOption {
       default = "0.0.0.0";
       type = lib.types.str;
-      description = lib.mdDoc ''
+      description = ''
         Host where yt-dlp-web-ui will listen at.
       '';
     };
@@ -64,14 +64,14 @@ in
     port = lib.mkOption {
       default = 3033;
       type = lib.types.port;
-      description = lib.mdDoc ''
+      description = ''
         Port where yt-dlp-web-ui will listen at.
       '';
     };
 
     downloadDir = lib.mkOption {
       type = lib.types.str;
-      description = lib.mdDoc ''
+      description = ''
         The directory where yt-dlp-web-ui stores downloads.
       '';
     };
@@ -79,7 +79,7 @@ in
     queueSize = lib.mkOption {
       default = 2;
       type = lib.types.ints.unsigned; # >= 0
-      description = lib.mdDoc ''
+      description = ''
         Queue size (concurrent downloads).
       '';
     };
@@ -87,7 +87,7 @@ in
     logging = lib.mkEnableOption "logging";
 
     rpcAuth = lib.mkOption {
-      description = lib.mdDoc ''
+      description = ''
         RPC Authentication settings.
       '';
       default = { };
@@ -96,21 +96,21 @@ in
           enable = lib.mkEnableOption "RPC authentication";
           user = lib.mkOption {
             type = lib.types.str;
-            description = lib.mdDoc ''
+            description = ''
               Username required for auth.
             '';
           };
           passwordFile = lib.mkOption {
             type = with lib.types; nullOr str;
             default = null;
-            description = lib.mdDoc ''
+            description = ''
               Path to the file containing the password required for auth.
             '';
           };
           insecurePasswordText = lib.mkOption {
             type = with lib.types; nullOr str;
             default = null;
-            description = lib.mdDoc ''
+            description = ''
               Raw password required for auth.
 
               It's strongly recommended to use 'passwordFile' instead of this option.
